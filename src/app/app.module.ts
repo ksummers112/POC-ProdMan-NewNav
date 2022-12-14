@@ -3,16 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MaterialExampleModule } from '../material.module';
-import { CardMediaSizeExample } from './card-media-size-example';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { HttpClientModule } from '@angular/common/http';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
-  declarations: [CardMediaSizeExample],
+  declarations: [CardComponent],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
@@ -26,6 +26,6 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NgbModule,
   ],
   providers: [],
-  bootstrap: [CardMediaSizeExample],
+  bootstrap: [CardComponent],
 })
 export class AppModule {}

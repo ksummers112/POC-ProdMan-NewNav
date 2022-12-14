@@ -1,19 +1,18 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 /**
  * @title Card with media size
  */
 @Component({
-  selector: 'card-media-size-example',
-  templateUrl: 'card-media-size-example.html',
-  styleUrls: ['card-media-size-example.css'],
+  selector: 'app-card',
+  templateUrl: 'card.component.html',
+  styleUrls: ['card.component.css'],
 })
-export class CardMediaSizeExample {
+export class CardComponent {
   longText = `The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
   from Japan. A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was
   originally bred for hunting.`;
 }
-
 
 /**  Copyright 2022 Google LLC. All Rights Reserved.
     Use of this source code is governed by an MIT-style license that
