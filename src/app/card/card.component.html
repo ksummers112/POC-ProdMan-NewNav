@@ -1,106 +1,201 @@
-<div class="center">
-<mat-card class="example-card" [matMenuTriggerFor]="signoffWorkMenu">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Signoff Work</mat-card-title>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>Start/Complete fab work</mat-card-content>
-</mat-card>
+<mat-drawer-container class="example-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="over">
+    <mat-menu #menu="matMenu">
+      <mat-form-field
+        class="app-search"
+        appearance="outline"
+        (click)="$event.stopPropagation()"
+      >
+        <input
+          matInput
+          placeholder="Search..."
+          autocomplete="off"
+          #searchInput
+        />
+      </mat-form-field>
 
-<mat-menu #signoffWorkMenu="matMenu">
-  <input matInput placeholder="Search" />
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Assembled</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Bent</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Galvanized</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Laser Cut</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Machined</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Outrigger</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
-    Outside Processed
-  </button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Painted</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Plasma Cut</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Rolled</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">SawCut</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Tested</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Welded</button>
-  <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Zinc Plated</button>
-</mat-menu>
+      <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span> Job Management </span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-menu-item>Freeze Unit</button>
 
-<mat-menu #assembledMenu="matMenu">
-  <button mat-menu-item>92 Control Panel Assembly</button>
-  <button mat-menu-item>92 Derrick Assembly</button>
-  <button mat-menu-item>92 Fiberglass Boom Assy</button>
-  <button mat-menu-item>92 Glass Glue</button>
-  <button mat-menu-item>92 Hoses</button>
-  <button mat-menu-item>92 Jibs</button>
-  <button mat-menu-item>92 LD Assembly</button>
-  <button mat-menu-item>92 NONE</button>
-  <button mat-menu-item>92 Pedestal Assy</button>
-  <button mat-menu-item>92 Telescopic Boom Assy</button>
-  <button mat-menu-item>92 Turntable Assy</button>
-  <button mat-menu-item>92 Upper Controls</button>
-  <button mat-menu-item>AA Assembly</button>
-  <button mat-menu-item>AC Assembly</button>
-  <button mat-menu-item>AM Assembly</button>
-  <button mat-menu-item>AT Assembly</button>
-  <button mat-menu-item>Controller Assembly</button>
-  <button mat-menu-item>Electrical Subassembly</button>
-  <button mat-menu-item>Elevator Prebuild</button>
-  <button mat-menu-item>Fiberglass Rod Assembly</button>
-  <button mat-menu-item>Hose Assembly - Non-conductive</button>
-  <button mat-menu-item>Hose Assembly - Wire Braid</button>
-  <button mat-menu-item>Lower Control Assembly</button>
-  <button mat-menu-item>Machine Sub-Assembly</button>
-  <button mat-menu-item>P-Ticket Assembly (P-T Assy)</button>
-  <button mat-menu-item>Ped Assy</button>
-  <button mat-menu-item>Platform Assy</button>
-  <button mat-menu-item>TA Assembly</button>
-</mat-menu>
+          <button mat-menu-item>Freeze Outriggers</button>
 
-<mat-card class="example-card" [matMenuTriggerFor]="jobManagementMenu">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Job Management</mat-card-title>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content> Freeze jobs, review jobs, etc. </mat-card-content>
-</mat-card>
+          <button mat-menu-item>Freeze Elevators</button>
 
-<mat-menu #jobManagementMenu="matMenu">
-  <button mat-menu-item>Freeze Units</button>
-  <button mat-menu-item>Freeze Outriggers</button>
-  <button mat-menu-item>Freeze Elevators</button>
-  <button mat-menu-item>Signoff Review</button>
-</mat-menu>
+          <button mat-menu-item>Signoff Review</button>
+        </mat-expansion-panel>
+      </mat-accordion>
 
-<mat-card class="example-card" [matMenuTriggerFor]="pTicketManagementMenu">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>P-Ticket Management</mat-card-title>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content> Batching, reviewing, etc. </mat-card-content>
-</mat-card>
+      <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <span> P-Ticket Management </span>
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <button mat-menu-item>Batch P-Tickets</button>
 
-<mat-menu #pTicketManagementMenu="matMenu">
-  <button mat-menu-item>Batch P-Tickets</button>
-  <button mat-menu-item>P-Ticket Prints/Tags</button>
-  <button mat-menu-item>P-Ticket History</button>
-</mat-menu>
+          <button mat-menu-item>P-Ticket Prints/Tags</button>
 
-<mat-card class="example-card" [matMenuTriggerFor]="reportingMenu">
-  <mat-card-header>
-    <mat-card-title-group>
-      <mat-card-title>Reporting</mat-card-title>
-    </mat-card-title-group>
-  </mat-card-header>
-  <mat-card-content>Glanceboards, etc.</mat-card-content>
-</mat-card>
+          <button mat-menu-item>P-Ticket History</button>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </mat-menu>
+  </mat-drawer>
 
-<mat-menu #reportingMenu="matMenu">
-  <button mat-menu-item>GlanceBoard</button>
-  <button mat-menu-item>Fab Report</button>
-</mat-menu>
-</div>
+  <mat-drawer-content>
+    <button mat-button (click)="drawer.toggle()">
+      <mat-icon>widgets</mat-icon>
+    </button>
+
+    <div class="center">
+      <mat-card class="example-card" [matMenuTriggerFor]="signoffWorkMenu">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Signoff Work</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>Start/Complete fab work</mat-card-content>
+      </mat-card>
+
+      <mat-menu #signoffWorkMenu="matMenu">
+        <mat-form-field
+          class="app-search"
+          appearance="outline"
+          (click)="$event.stopPropagation()"
+        >
+          <input
+            matInput
+            placeholder="Search..."
+            autocomplete="off"
+            #searchInput
+          />
+        </mat-form-field>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Assembled
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Bent</button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Galvanized
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Laser Cut
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Machined
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Outrigger
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Outside Processed
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Painted
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Plasma Cut
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Rolled
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          SawCut
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Tested
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Welded
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Zinc Plated
+        </button>
+      </mat-menu>
+
+      <mat-menu #assembledMenu="matMenu">
+        <button mat-menu-item>92 Control Panel Assembly</button>
+        <button mat-menu-item>92 Derrick Assembly</button>
+        <button mat-menu-item>92 Fiberglass Boom Assy</button>
+        <button mat-menu-item>92 Glass Glue</button>
+        <button mat-menu-item>92 Hoses</button>
+        <button mat-menu-item>92 Jibs</button>
+        <button mat-menu-item>92 LD Assembly</button>
+        <button mat-menu-item>92 NONE</button>
+        <button mat-menu-item>92 Pedestal Assy</button>
+        <button mat-menu-item>92 Telescopic Boom Assy</button>
+        <button mat-menu-item>92 Turntable Assy</button>
+        <button mat-menu-item>92 Upper Controls</button>
+        <button mat-menu-item>AA Assembly</button>
+        <button mat-menu-item>AC Assembly</button>
+        <button mat-menu-item>AM Assembly</button>
+        <button mat-menu-item>AT Assembly</button>
+        <button mat-menu-item>Controller Assembly</button>
+        <button mat-menu-item>Electrical Subassembly</button>
+        <button mat-menu-item>Elevator Prebuild</button>
+        <button mat-menu-item>Fiberglass Rod Assembly</button>
+        <button mat-menu-item>Hose Assembly - Non-conductive</button>
+        <button mat-menu-item>Hose Assembly - Wire Braid</button>
+        <button mat-menu-item>Lower Control Assembly</button>
+        <button mat-menu-item>Machine Sub-Assembly</button>
+        <button mat-menu-item>P-Ticket Assembly (P-T Assy)</button>
+        <button mat-menu-item>Ped Assy</button>
+        <button mat-menu-item>Platform Assy</button>
+        <button mat-menu-item>TA Assembly</button>
+      </mat-menu>
+
+      <mat-card class="example-card" [matMenuTriggerFor]="jobManagementMenu">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Job Management</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content> Freeze jobs, review jobs, etc. </mat-card-content>
+      </mat-card>
+
+      <mat-menu #jobManagementMenu="matMenu">
+        <button mat-menu-item>Freeze Units</button>
+        <button mat-menu-item>Freeze Outriggers</button>
+        <button mat-menu-item>Freeze Elevators</button>
+        <button mat-menu-item>Signoff Review</button>
+      </mat-menu>
+
+      <mat-card
+        class="example-card"
+        [matMenuTriggerFor]="pTicketManagementMenu"
+      >
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>P-Ticket Management</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content> Batching, reviewing, etc. </mat-card-content>
+      </mat-card>
+
+      <mat-menu #pTicketManagementMenu="matMenu">
+        <button mat-menu-item>Batch P-Tickets</button>
+        <button mat-menu-item>P-Ticket Prints/Tags</button>
+        <button mat-menu-item>P-Ticket History</button>
+      </mat-menu>
+
+      <mat-card class="example-card" [matMenuTriggerFor]="reportingMenu">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Reporting</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>Glanceboards, etc.</mat-card-content>
+      </mat-card>
+
+      <mat-menu #reportingMenu="matMenu">
+        <button mat-menu-item>GlanceBoard</button>
+        <button mat-menu-item>Fab Report</button>
+      </mat-menu>
+    </div>
+  </mat-drawer-content>
+</mat-drawer-container>
