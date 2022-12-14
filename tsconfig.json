@@ -28,7 +28,10 @@
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictBindCallApply": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": [
+      "@angular/localize"
+    ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
