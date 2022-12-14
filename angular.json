@@ -32,7 +32,7 @@
             "assets": ["src/assets"],
             "styles": [
               "node_modules/bootstrap/scss/bootstrap.scss",
-              "src/styles.css"
+              "src/styles.scss"
             ],
             "stylePreprocessorOptions": {
               "includePaths": ["node_modules/"]
