@@ -7,6 +7,21 @@
     >
       <input matInput placeholder="Search..." autocomplete="off" #searchInput />
     </mat-form-field>
+    
+    <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span> Favorites </span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-menu-item>Controller Assembly (303001)</button>
+
+        <button mat-menu-item>Laser (319000)</button>
+
+        <button mat-menu-item>Signoff Review</button>
+      </mat-expansion-panel>
+    </mat-accordion>
 
     <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
       <mat-expansion-panel>
