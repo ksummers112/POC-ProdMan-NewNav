@@ -1,51 +1,44 @@
 <mat-drawer-container class="example-container" hasBackdrop="true">
   <mat-drawer #drawer mode="over">
-    <mat-menu #menu="matMenu">
-      <mat-form-field
-        class="app-search"
-        appearance="outline"
-        (click)="$event.stopPropagation()"
-      >
-        <input
-          matInput
-          placeholder="Search..."
-          autocomplete="off"
-          #searchInput
-        />
-      </mat-form-field>
+    <mat-form-field
+      class="app-search"
+      appearance="outline"
+      (click)="$event.stopPropagation()"
+    >
+      <input matInput placeholder="Search..." autocomplete="off" #searchInput />
+    </mat-form-field>
 
-      <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span> Job Management </span>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <button mat-menu-item>Freeze Unit</button>
+    <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span> Job Management </span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-menu-item>Freeze Unit</button>
 
-          <button mat-menu-item>Freeze Outriggers</button>
+        <button mat-menu-item>Freeze Outriggers</button>
 
-          <button mat-menu-item>Freeze Elevators</button>
+        <button mat-menu-item>Freeze Elevators</button>
 
-          <button mat-menu-item>Signoff Review</button>
-        </mat-expansion-panel>
-      </mat-accordion>
+        <button mat-menu-item>Signoff Review</button>
+      </mat-expansion-panel>
+    </mat-accordion>
 
-      <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              <span> P-Ticket Management </span>
-            </mat-panel-title>
-          </mat-expansion-panel-header>
-          <button mat-menu-item>Batch P-Tickets</button>
+    <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span> P-Ticket Management </span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-menu-item>Batch P-Tickets</button>
 
-          <button mat-menu-item>P-Ticket Prints/Tags</button>
+        <button mat-menu-item>P-Ticket Prints/Tags</button>
 
-          <button mat-menu-item>P-Ticket History</button>
-        </mat-expansion-panel>
-      </mat-accordion>
-    </mat-menu>
+        <button mat-menu-item>P-Ticket History</button>
+      </mat-expansion-panel>
+    </mat-accordion>
   </mat-drawer>
 
   <mat-drawer-content>
