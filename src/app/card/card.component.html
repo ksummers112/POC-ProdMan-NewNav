@@ -12,6 +12,56 @@
       <mat-expansion-panel>
         <mat-expansion-panel-header>
           <mat-panel-title>
+            <span> Signoff Work </span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Assembled
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">Bent</button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Galvanized
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Laser Cut
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Machined
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Outrigger
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Outside Processed
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Painted
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Plasma Cut
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Rolled
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          SawCut
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Tested
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Welded
+        </button>
+        <button mat-menu-item [matMenuTriggerFor]="assembledMenu">
+          Zinc Plated
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
             <span> Job Management </span>
           </mat-panel-title>
         </mat-expansion-panel-header>
@@ -37,6 +87,19 @@
         <button mat-menu-item>P-Ticket Prints/Tags</button>
 
         <button mat-menu-item>P-Ticket History</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span> Reporting </span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-menu-item>Glanceboard</button>
+
+        <button mat-menu-item>Fab Report</button>
       </mat-expansion-panel>
     </mat-accordion>
   </mat-drawer>
@@ -186,7 +249,7 @@
       </mat-card>
 
       <mat-menu #reportingMenu="matMenu">
-        <button mat-menu-item>GlanceBoard</button>
+        <button mat-menu-item>Glanceboard</button>
         <button mat-menu-item>Fab Report</button>
       </mat-menu>
     </div>
