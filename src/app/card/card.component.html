@@ -102,6 +102,31 @@
         <button mat-menu-item>Fab Report</button>
       </mat-expansion-panel>
     </mat-accordion>
+
+    <mat-accordion (click)="$event.stopPropagation()" displayMode="default">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span> Settings </span>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-menu-item>Glanceboard Configuration</button>
+
+        <button mat-menu-item>Department Settings</button>
+
+        <button mat-menu-item>Scheduling Rules</button>
+
+        <button mat-menu-item>Resequence</button>
+
+        <button mat-menu-item>Org Settings</button>
+
+        <button mat-menu-item>Reschedule</button>
+
+        <button mat-menu-item>Date Shift Scheduling</button>
+
+        <button mat-menu-item>User Settings</button>
+      </mat-expansion-panel>
+    </mat-accordion>
   </mat-drawer>
 
   <mat-drawer-content>
@@ -251,6 +276,33 @@
       <mat-menu #reportingMenu="matMenu">
         <button mat-menu-item>Glanceboard</button>
         <button mat-menu-item>Fab Report</button>
+      </mat-menu>
+
+      <mat-card class="example-card" [matMenuTriggerFor]="settingsMenu">
+        <mat-card-header>
+          <mat-card-title-group>
+            <mat-card-title>Settings</mat-card-title>
+          </mat-card-title-group>
+        </mat-card-header>
+        <mat-card-content>Production Manager Settings/Setup</mat-card-content>
+      </mat-card>
+
+      <mat-menu #settingsMenu="matMenu">
+        <button mat-menu-item>Glanceboard Configuration</button>
+
+        <button mat-menu-item>Department Settings</button>
+
+        <button mat-menu-item>Scheduling Rules</button>
+
+        <button mat-menu-item>Resequence</button>
+
+        <button mat-menu-item>Org Settings</button>
+
+        <button mat-menu-item>Reschedule</button>
+
+        <button mat-menu-item>Date Shift Scheduling</button>
+
+        <button mat-menu-item>User Settings</button>
       </mat-menu>
     </div>
   </mat-drawer-content>
